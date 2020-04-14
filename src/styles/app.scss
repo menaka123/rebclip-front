@@ -1,0 +1,17 @@
+@import "vars";
+//@import "./font.scss";
+
+
+.btn-primary {
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 30px;
+  color: $textLight;
+  background-color: $blue;
+  border-color: $borderColor;
+  font-family: Chalkboard;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  letter-spacing: 0.4px;
+}

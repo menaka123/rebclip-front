@@ -1,0 +1,17 @@
+.add-new-post ul {
+  left: auto;
+  right: 10px;
+}
+
+.description {
+  height: 150px;
+  textarea {
+    max-height: 150px;
+    overflow: scroll;
+  }
+}
+
+.sidenav-trigger {
+  display: none;
+}
+

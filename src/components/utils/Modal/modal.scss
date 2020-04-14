@@ -1,0 +1,145 @@
+@import "../../../styles/vars";
+
+.my-modal
+{
+    visibility: hidden;
+    background: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.24);
+    padding: 20px;
+    opacity: 0;
+    width: 100%;
+    height: 100% !important;
+    
+    transition: 0.16s all ease-in-out;
+    
+    &.visible
+    {
+        visibility: visible;
+        opacity: 1;
+    }
+    &.autoHeight
+    {
+        .card .body
+        {
+            min-height: 0;
+        }
+    }
+
+    .btn {
+        margin-left: 10px;
+    }
+
+    .label-body {
+        padding-left: 10px;
+    }
+    
+    .card
+    {
+        background: #fff;
+        border-radius: 8px;
+        width: 460px;
+        box-shadow: $boxShadowModal;
+        padding: 20px 0;
+        
+        .header
+        {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 0 20px;
+            
+            .title
+            {
+                font-size: 20px;
+                font-weight: 600;
+                margin-right: 16px;
+                color: $textMain;
+            }
+            ion-icon
+            {
+                flex-shrink: 0;
+                font-size: 32px;
+                opacity: 0.6;
+                cursor: pointer;
+                transform: translate(4px,-6px);
+            }
+        }
+        .description
+        {
+            line-height: 1.4em;
+            margin-top: 4px;
+            padding: 0 20px;
+        }
+        .body
+        {
+            margin-top: 12px;
+            padding: 0 20px 32px;
+            max-height: 440px;
+            overflow: scroll;
+        }
+        .footer
+        {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            border-top: 1px solid $borderColor;
+            padding: 16px 20px 0;
+            
+            .actionButton
+            {
+                margin-left: 12px;
+            }
+        }
+
+    }
+
+
+    &.large
+    {
+        .card
+        {
+            width: 640px;
+        }
+    }
+    
+    &.animateFromBottom
+    {
+        padding-bottom: 0;
+        
+        .card
+        {
+            position: absolute;
+            bottom: -100vh;
+            border-radius: 12px 12px 0 0;
+            
+            transition: 0.16s bottom ease-out;
+            
+            .body
+            {
+                border-top: 1px solid $borderColor;
+                margin-top: 8px;
+                padding-top: 16px;
+            }
+        }
+        
+        &.visible
+        {
+            .card
+            {
+                bottom: 0;
+                
+                transition-delay: 0.16s;
+            }
+        }
+    }
+}

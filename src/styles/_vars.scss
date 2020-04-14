@@ -1,0 +1,75 @@
+// media
+$mediaMobile: "screen and (max-width: 768px)";
+$mediaTablet: "screen and (max-width: 1024px)";
+$mediaDesktopSmall: "screen and (max-width: 1366px)";
+$mediaLargerDevices: 'screen and (min-width:992px)';
+$fontFamily: 'Avenir', 'Roboto', sans-serif;
+
+// basic
+$bg: #FBFBFD;
+$bgBlue: #7AAAF2;
+$borderColor: #007bff;
+//$borderColorDarker: #D8DCE6;
+//$borderDefault: 1px solid $borderColor;
+//$borderColorDark: #2E2E33;
+
+// text
+$textMain: #3E3F42;
+$textBase: #8B8B8B;
+$textSecondary: #9EA0A5;
+$textLight: #fff;
+
+// colors
+$green: #38B249;
+$blue: #176AE6;
+$orange: #F6AB2F;
+$violet: #6977FF;
+$red: #E6492D;
+$yellow: #FACF55;
+$success: $green;
+$primary: #8533FF;
+$primary-07: rgba(133, 51, 255, 0.07);
+$warning: $orange;
+$error: $red;
+
+$row-hover: #FAFAFC; //#FBFBFD;
+
+$activityLog-red: #FF333C;
+$activityLog-green: #4DD686;
+$activityLog-gray: #DEDEE0;
+
+// base color pairs
+$colorPairs: (green, #38B249),
+(blue, #1665D8),
+(orange, #F6AB2F),
+(violet, $primary),
+(yellow, #FACF55),
+(red, #E6492D);
+// mixins
+@mixin generateColorVariants($class, $property, $alpha) {
+  @each $name,
+  $color in (green, #38B249),
+  (blue, #1665D8),
+  (orange, #F6AB2F),
+  (violet, $primary),
+  (red, #E6492D) {
+    #{$class}.#{$name} {
+      #{$property}: rgba($color, $alpha);
+    }
+  }
+}
+
+@mixin textOverflow {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@mixin backgroundCover {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+// others
+$boxShadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+$boxShadowModal: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
